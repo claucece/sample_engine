@@ -16,6 +16,7 @@ module Billingleap
     # GET /items/new
     def new
       @item = Item.new
+      @item.category_id = params[:category_id]
     end
 
     # GET /items/1/edit

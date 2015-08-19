@@ -1,5 +1,7 @@
 module Billingleap
   class Item < ActiveRecord::Base
-  belongs_to :category
+    mount_uploader :image, ItemImageUploader
+
+    belongs_to :category
   end
 end

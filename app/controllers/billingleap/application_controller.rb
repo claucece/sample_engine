@@ -1,4 +1,4 @@
 module Billingleap
-  class ApplicationController < ActionController::Base
+class Billingleap::ApplicationController < ActionController::Base
   end
 end

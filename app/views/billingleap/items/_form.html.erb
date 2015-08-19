@@ -1,11 +1,11 @@
-<%= form_for(@item) do |f| %>
+<%= form_for(@item, :multipart => true) do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
 
       <ul>
-      <% @item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
@@ -20,12 +20,11 @@
     <%= f.text_area :text %>
   </div>
   <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
   </div>
   <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
+    <%= f.hidden_field :category_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
